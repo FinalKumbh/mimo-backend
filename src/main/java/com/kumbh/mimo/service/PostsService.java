@@ -2,6 +2,7 @@ package com.kumbh.mimo.service;
 
 import com.kumbh.mimo.domain.posts.Posts;
 import com.kumbh.mimo.domain.posts.PostsRepository;
+import com.kumbh.mimo.web.dto.PostsListResponseDto;
 import com.kumbh.mimo.web.dto.PostsResponseDto;
 import com.kumbh.mimo.web.dto.PostsSaveRequestDto;
 import com.kumbh.mimo.web.dto.PostsUpdateRequestDto;
@@ -44,6 +45,13 @@ public class PostsService {
         Posts posts = postsRepository.findById(id).orElseThrow(()->new
                 IllegalArgumentException("해당 게시글이 없습니다. id="+ id));
         postsRepository.delete(posts);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
     }
 
 }

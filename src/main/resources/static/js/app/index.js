@@ -1,3 +1,7 @@
+//var token = $("meta[name='_csrf']").attr("content");
+//var header = $("meta[name='_csrf_header']").attr("content");
+//$(document).ajaxSend(function(e, xhr, options) { xhr.setRequestHeader(header, token); });
+
 var main = {
     init : function () {
         var _this = this;
@@ -26,6 +30,7 @@ var main = {
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
+
         }).done(function() {
             alert('글이 등록되었습니다.');
             window.location.href = '/';
@@ -69,7 +74,6 @@ var main = {
             alert(JSON.stringify(error));
         });
     }
-
 };
 
 main.init();

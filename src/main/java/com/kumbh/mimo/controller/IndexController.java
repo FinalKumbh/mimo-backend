@@ -2,6 +2,8 @@ package com.kumbh.mimo.controller;
 
 import com.kumbh.mimo.config.auth.LoginUser;
 import com.kumbh.mimo.config.auth.dto.SessionUser;
+import com.kumbh.mimo.service.PostsService;
+import com.kumbh.mimo.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +16,13 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
+    private final PostsService postsService;
     private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
@@ -27,6 +32,14 @@ public class IndexController {
     @GetMapping("/posts/save")
     public String postsSave(){
         return "posts-save";
+    }
+
+    @GetMapping("/posts/update/{id}")
+    public String postsUpdate(@PathVariable Long id, Model model){
+
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post",dto);
+        return "posts-update";
     }
 
 }

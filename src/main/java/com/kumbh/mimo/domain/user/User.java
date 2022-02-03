@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter
-@NoArgsConstructor
-@Entity
+@NoArgsConstructor          //파라미터가 없는 기본 생성자를 생성
+@Entity                     //테이블과 1:1로 매칭되는 객체 단위
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

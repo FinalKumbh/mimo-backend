@@ -30,6 +30,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 	implementation 'org.springframework.session:spring-session-jdbc'
+
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
 }
 
 tasks.named('test') {

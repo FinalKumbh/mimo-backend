@@ -1,6 +1,8 @@
 package com.kumbh.mimo.domain.item;
 
+import com.kumbh.mimo.domain.BaseEntity;
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,9 +13,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="item")
 @Getter
-@Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity {
     @Id
     @Column(name="item_id")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -37,4 +38,20 @@ public class Item {
 
     private LocalDateTime regTime;              //등록 시간
     private LocalDateTime updateTime;           //수정 시간
+
+    public Item() {
+    }
+
+    @Builder
+    public Item(Long id, String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus, LocalDateTime regTime, LocalDateTime updateTime){
+        this.id = id;
+        this.itemNm = itemNm;
+        this.price = price;
+        this.stockNumber = stockNumber;
+        this.itemDetail = itemDetail;
+        this.itemSellStatus = itemSellStatus;
+        this.regTime = regTime;
+        this.updateTime = updateTime;
+    }
+
 }

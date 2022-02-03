@@ -1,10 +1,9 @@
-package com.kumbh.mimo.entity;
+package com.kumbh.mimo.domain.item;
 
-import com.kumbh.mimo.constant.ItemSellStatus;
+import com.kumbh.mimo.domain.constant.ItemSellStatus;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.CollectionId;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.kumbh.mimo.repository;
+package com.kumbh.mimo.domain.item;
 
 import com.kumbh.mimo.domain.item.Item;
 import org.springframework.data.jpa.repository.JpaRepository;

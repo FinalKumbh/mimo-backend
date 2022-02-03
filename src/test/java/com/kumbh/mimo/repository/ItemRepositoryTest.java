@@ -2,6 +2,7 @@ package com.kumbh.mimo.repository;
 
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
 import com.kumbh.mimo.domain.item.Item;
+import com.kumbh.mimo.domain.item.ItemRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

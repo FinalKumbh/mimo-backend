@@ -1,3 +1,6 @@
 Devtools 기능 사용하기 -> 실패,,
 1. File > Settings > Advanced Settings > Compiler > Allow auto-make to start even if developed application is currently running 체크
 2. File > Settings > Build, Execution, Deployment -> Compiler -> Build project automatically 체크
+
+상품 등록 시
+C:\shop\item 디렉터리 만들고 하기

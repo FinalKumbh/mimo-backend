@@ -7,12 +7,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @RequiredArgsConstructor
-@EnableWebSecurity      //spring security 설정 활성화 시켜줌
+@EnableWebSecurity      //spring security 설정 활성화 시켜줌. SpringSecurityFilterChain 자동 포함
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
     private final CustomOAuth2UserService customOAuth2UserService;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {      //http 요청에 대한 보안 설정
         http
                 .csrf().disable()
                 .headers().frameOptions().disable()         //h2-console 화면을 사용하기 위해 해당 옵션들을 disable

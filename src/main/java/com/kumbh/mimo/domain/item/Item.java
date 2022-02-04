@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="item")
-@Getter
+@Getter @Setter
 @ToString
 public class Item extends BaseEntity {
     @Id
@@ -39,19 +39,19 @@ public class Item extends BaseEntity {
     private LocalDateTime regTime;              //등록 시간
     private LocalDateTime updateTime;           //수정 시간
 
-    public Item() {
-    }
+    //public Item() {
+    //}
 
-    @Builder
-    public Item(Long id, String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus, LocalDateTime regTime, LocalDateTime updateTime){
-        this.id = id;
-        this.itemNm = itemNm;
-        this.price = price;
-        this.stockNumber = stockNumber;
-        this.itemDetail = itemDetail;
-        this.itemSellStatus = itemSellStatus;
-        this.regTime = regTime;
-        this.updateTime = updateTime;
-    }
+    //@Builder
+    //public Item(Long id, String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus, LocalDateTime regTime, LocalDateTime updateTime){
+    //    this.id = id;
+    //    this.itemNm = itemNm;
+    //    this.price = price;
+    //    this.stockNumber = stockNumber;
+    //    this.itemDetail = itemDetail;
+    //    this.itemSellStatus = itemSellStatus;
+    //    this.regTime = regTime;
+    //    this.updateTime = updateTime;
+    //}
 
 }

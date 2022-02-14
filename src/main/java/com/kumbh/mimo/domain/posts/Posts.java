@@ -1,5 +1,6 @@
 package com.kumbh.mimo.domain.posts;
 
+import com.kumbh.mimo.domain.BaseEntity;
 import com.kumbh.mimo.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,13 +1,14 @@
 package com.kumbh.mimo.controller;
 
+import com.kumbh.mimo.domain.user.User;
+import com.kumbh.mimo.domain.user.UserRepository;
 import com.kumbh.mimo.exception.BadRequestException;
-import com.kumbh.mimo.model.AuthProvider;
-import com.kumbh.mimo.model.User;
+import com.kumbh.mimo.domain.constant.AuthProvider;
+
 import com.kumbh.mimo.payload.ApiResponse;
 import com.kumbh.mimo.payload.AuthResponse;
 import com.kumbh.mimo.payload.LoginRequest;
 import com.kumbh.mimo.payload.SignUpRequest;
-import com.kumbh.mimo.repository.UserRepository;
 import com.kumbh.mimo.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

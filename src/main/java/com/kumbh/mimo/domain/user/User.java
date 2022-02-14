@@ -1,5 +1,11 @@
-package com.kumbh.mimo.model;
+package com.kumbh.mimo.domain.user;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.kumbh.mimo.domain.BaseTimeEntity;
+import com.kumbh.mimo.domain.constant.AuthProvider;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -9,8 +15,10 @@ import javax.validation.constraints.NotNull;
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email")
 })
+@Getter
+@NoArgsConstructor
 @Entity
-public class User {
+public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,6 +43,12 @@ public class User {
     private AuthProvider provider;
 
     private String providerId;
+
+    @Builder
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 
     public Long getId() {
         return id;

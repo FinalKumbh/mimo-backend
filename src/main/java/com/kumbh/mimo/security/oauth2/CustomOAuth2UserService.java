@@ -1,10 +1,10 @@
 package com.kumbh.mimo.security.oauth2;
 
 
+import com.kumbh.mimo.domain.user.User;
+import com.kumbh.mimo.domain.user.UserRepository;
 import com.kumbh.mimo.exception.OAuth2AuthenticationProcessingException;
-import com.kumbh.mimo.model.AuthProvider;
-import com.kumbh.mimo.model.User;
-import com.kumbh.mimo.repository.UserRepository;
+import com.kumbh.mimo.domain.constant.AuthProvider;
 import com.kumbh.mimo.security.UserPrincipal;
 import com.kumbh.mimo.security.oauth2.user.OAuth2UserInfo;
 import com.kumbh.mimo.security.oauth2.user.OAuth2UserInfoFactory;

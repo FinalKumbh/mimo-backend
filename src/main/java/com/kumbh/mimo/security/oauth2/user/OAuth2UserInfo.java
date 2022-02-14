@@ -1,7 +1,11 @@
 package com.kumbh.mimo.security.oauth2.user;
 
+import lombok.Builder;
+import lombok.Getter;
+
 import java.util.Map;
 
+@Getter
 public abstract class OAuth2UserInfo {
     protected Map<String, Object> attributes;
 
@@ -20,4 +24,5 @@ public abstract class OAuth2UserInfo {
     public abstract String getEmail();
 
     public abstract String getImageUrl();
+    
 }

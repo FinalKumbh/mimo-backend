@@ -1,9 +1,9 @@
 package com.kumbh.mimo.security;
 
 
+import com.kumbh.mimo.domain.user.User;
+import com.kumbh.mimo.domain.user.UserRepository;
 import com.kumbh.mimo.exception.ResourceNotFoundException;
-import com.kumbh.mimo.model.User;
-import com.kumbh.mimo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

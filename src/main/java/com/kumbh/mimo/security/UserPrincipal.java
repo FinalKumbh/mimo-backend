@@ -1,6 +1,6 @@
 package com.kumbh.mimo.security;
 
-import com.kumbh.mimo.model.User;
+import com.kumbh.mimo.domain.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

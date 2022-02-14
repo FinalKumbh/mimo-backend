@@ -1,4 +1,4 @@
-package com.kumbh.mimo.model;
+package com.kumbh.mimo.domain.constant;
 
 public enum  AuthProvider {
     local,

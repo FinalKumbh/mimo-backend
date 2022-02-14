@@ -1,5 +1,6 @@
 package com.kumbh.mimo.controller;
 
+import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.service.PostsService;
 import com.kumbh.mimo.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -17,15 +18,15 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
 
-//    @GetMapping("/")
-//    public String index(Model model, SessionUser user) {
-//        model.addAttribute("posts", postsService.findAllDesc());
-//
-//        if (user != null) {
-//            model.addAttribute("userName", user.getName());
-//        }
-//        return "index";
-//    }
+    @GetMapping("/")
+    public String index(Model model, User user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        return "index";
+    }
 
     @GetMapping("/posts/save")
     public String postsSave(){

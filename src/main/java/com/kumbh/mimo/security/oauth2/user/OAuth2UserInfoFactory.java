@@ -1,7 +1,7 @@
 package com.kumbh.mimo.security.oauth2.user;
 
 import com.kumbh.mimo.exception.OAuth2AuthenticationProcessingException;
-import com.kumbh.mimo.model.AuthProvider;
+import com.kumbh.mimo.domain.constant.AuthProvider;
 
 import java.util.Map;
 

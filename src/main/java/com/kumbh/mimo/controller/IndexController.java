@@ -1,12 +1,10 @@
 package com.kumbh.mimo.controller;
 
-import com.kumbh.mimo.domain.user.User;
-import com.kumbh.mimo.dto.UserResponseDto;
 import com.kumbh.mimo.security.CurrentUser;
 import com.kumbh.mimo.security.UserPrincipal;
 import com.kumbh.mimo.service.PostsService;
 import com.kumbh.mimo.service.UserService;
-import com.kumbh.mimo.web.dto.PostsResponseDto;
+import com.kumbh.mimo.dto.post.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

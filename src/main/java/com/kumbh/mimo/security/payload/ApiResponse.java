@@ -1,4 +1,4 @@
-package com.kumbh.mimo.payload;
+package com.kumbh.mimo.security.payload;
 
 public class ApiResponse {
     private boolean success;

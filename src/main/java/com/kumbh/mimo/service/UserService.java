@@ -2,8 +2,8 @@ package com.kumbh.mimo.service;
 
 import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.domain.user.UserRepository;
-import com.kumbh.mimo.dto.UserResponseDto;
-import com.kumbh.mimo.dto.UserUpdateRequestDto;
+import com.kumbh.mimo.dto.user.UserResponseDto;
+import com.kumbh.mimo.dto.user.UserUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

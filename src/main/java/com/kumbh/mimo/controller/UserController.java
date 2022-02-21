@@ -2,8 +2,8 @@ package com.kumbh.mimo.controller;
 
 import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.domain.user.UserRepository;
-import com.kumbh.mimo.dto.UserResponseDto;
-import com.kumbh.mimo.dto.UserUpdateRequestDto;
+import com.kumbh.mimo.dto.user.UserResponseDto;
+import com.kumbh.mimo.dto.user.UserUpdateRequestDto;
 import com.kumbh.mimo.exception.ResourceNotFoundException;
 import com.kumbh.mimo.security.CurrentUser;
 import com.kumbh.mimo.security.UserPrincipal;

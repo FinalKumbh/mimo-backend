@@ -2,10 +2,10 @@ package com.kumbh.mimo.service;
 
 import com.kumbh.mimo.domain.posts.Posts;
 import com.kumbh.mimo.domain.posts.PostsRepository;
-import com.kumbh.mimo.web.dto.PostsListResponseDto;
-import com.kumbh.mimo.web.dto.PostsResponseDto;
-import com.kumbh.mimo.web.dto.PostsSaveRequestDto;
-import com.kumbh.mimo.web.dto.PostsUpdateRequestDto;
+import com.kumbh.mimo.dto.post.PostsListResponseDto;
+import com.kumbh.mimo.dto.post.PostsResponseDto;
+import com.kumbh.mimo.dto.post.PostsSaveRequestDto;
+import com.kumbh.mimo.dto.post.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

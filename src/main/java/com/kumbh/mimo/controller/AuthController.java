@@ -5,10 +5,10 @@ import com.kumbh.mimo.domain.user.UserRepository;
 import com.kumbh.mimo.exception.BadRequestException;
 import com.kumbh.mimo.domain.constant.AuthProvider;
 
-import com.kumbh.mimo.payload.ApiResponse;
-import com.kumbh.mimo.payload.AuthResponse;
-import com.kumbh.mimo.payload.LoginRequest;
-import com.kumbh.mimo.payload.SignUpRequest;
+import com.kumbh.mimo.security.payload.ApiResponse;
+import com.kumbh.mimo.security.payload.AuthResponse;
+import com.kumbh.mimo.security.payload.LoginRequest;
+import com.kumbh.mimo.security.payload.SignUpRequest;
 import com.kumbh.mimo.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

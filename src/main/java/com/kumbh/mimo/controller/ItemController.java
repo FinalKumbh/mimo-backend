@@ -1,6 +1,6 @@
 package com.kumbh.mimo.controller;
 
-import com.kumbh.mimo.dto.ItemFormDto;
+import com.kumbh.mimo.dto.item.ItemFormDto;
 import com.kumbh.mimo.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

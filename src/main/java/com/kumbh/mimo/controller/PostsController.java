@@ -1,16 +1,16 @@
-package com.kumbh.mimo.web;
+package com.kumbh.mimo.controller;
 
 
 import com.kumbh.mimo.service.PostsService;
-import com.kumbh.mimo.web.dto.PostsResponseDto;
-import com.kumbh.mimo.web.dto.PostsSaveRequestDto;
-import com.kumbh.mimo.web.dto.PostsUpdateRequestDto;
+import com.kumbh.mimo.dto.post.PostsResponseDto;
+import com.kumbh.mimo.dto.post.PostsSaveRequestDto;
+import com.kumbh.mimo.dto.post.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-public class PostsApiController {
+public class PostsController {
     private final PostsService postsService; // 생성자로 주입
 
     @PostMapping("/api/v1/posts")

@@ -4,7 +4,7 @@ import com.kumbh.mimo.domain.item.Item;
 import com.kumbh.mimo.domain.item.ItemImg;
 import com.kumbh.mimo.domain.item.ItemImgRepository;
 import com.kumbh.mimo.domain.item.ItemRepository;
-import com.kumbh.mimo.dto.ItemFormDto;
+import com.kumbh.mimo.dto.item.ItemFormDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

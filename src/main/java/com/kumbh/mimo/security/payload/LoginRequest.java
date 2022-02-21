@@ -1,4 +1,4 @@
-package com.kumbh.mimo.payload;
+package com.kumbh.mimo.security.payload;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

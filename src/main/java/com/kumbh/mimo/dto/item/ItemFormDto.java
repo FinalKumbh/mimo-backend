@@ -1,4 +1,4 @@
-package com.kumbh.mimo.dto;
+package com.kumbh.mimo.dto.item;
 
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
 import com.kumbh.mimo.domain.item.Item;

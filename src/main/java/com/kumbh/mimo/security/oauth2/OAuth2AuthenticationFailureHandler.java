@@ -1,7 +1,7 @@
 package com.kumbh.mimo.security.oauth2;
 
 
-import com.kumbh.mimo.util.CookieUtils;
+import com.kumbh.mimo.security.util.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;

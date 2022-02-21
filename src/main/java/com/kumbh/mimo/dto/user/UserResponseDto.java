@@ -1,4 +1,4 @@
-package com.kumbh.mimo.dto;
+package com.kumbh.mimo.dto.user;
 
 import com.kumbh.mimo.domain.user.User;
 import lombok.Getter;

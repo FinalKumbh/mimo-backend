@@ -1,4 +1,4 @@
-package com.kumbh.mimo.dto;
+package com.kumbh.mimo.dto.user;
 
 import lombok.Builder;
 import lombok.Getter;

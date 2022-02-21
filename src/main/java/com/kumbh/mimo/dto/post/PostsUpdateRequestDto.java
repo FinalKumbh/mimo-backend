@@ -1,4 +1,4 @@
-package com.kumbh.mimo.web.dto;
+package com.kumbh.mimo.dto.post;
 
 import lombok.Builder;
 import lombok.Getter;

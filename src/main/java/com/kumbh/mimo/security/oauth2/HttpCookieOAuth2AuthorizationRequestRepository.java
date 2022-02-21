@@ -1,6 +1,6 @@
 package com.kumbh.mimo.security.oauth2;
 
-import com.kumbh.mimo.util.CookieUtils;
+import com.kumbh.mimo.security.util.CookieUtils;
 import com.nimbusds.oauth2.sdk.util.StringUtils;
 import org.springframework.security.oauth2.client.web.AuthorizationRequestRepository;
 import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequest;

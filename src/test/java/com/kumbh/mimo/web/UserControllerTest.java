@@ -1,8 +1,7 @@
 package com.kumbh.mimo.web;
 
-import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.domain.user.UserRepository;
-import com.kumbh.mimo.dto.UserUpdateRequestDto;
+import com.kumbh.mimo.dto.user.UserUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

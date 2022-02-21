@@ -1,4 +1,4 @@
-package com.kumbh.mimo.dto;
+package com.kumbh.mimo.dto.item;
 
 import com.kumbh.mimo.domain.item.ItemImg;
 import lombok.Getter;

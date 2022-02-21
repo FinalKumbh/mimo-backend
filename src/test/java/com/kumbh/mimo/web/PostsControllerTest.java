@@ -4,15 +4,14 @@ package com.kumbh.mimo.web;
 import com.kumbh.mimo.domain.posts.Posts;
 import com.kumbh.mimo.domain.posts.PostsRepository;
 
-import com.kumbh.mimo.web.dto.PostsSaveRequestDto;
-import com.kumbh.mimo.web.dto.PostsUpdateRequestDto;
+import com.kumbh.mimo.dto.post.PostsSaveRequestDto;
+import com.kumbh.mimo.dto.post.PostsUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -22,7 +21,7 @@ import java.util.List;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PostsApiControllerTest {
+public class PostsControllerTest {
 
     @LocalServerPort
     private int port;

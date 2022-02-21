@@ -1,4 +1,4 @@
-package com.kumbh.mimo.util;
+package com.kumbh.mimo.security.util;
 
 import org.springframework.util.SerializationUtils;
 import javax.servlet.http.Cookie;

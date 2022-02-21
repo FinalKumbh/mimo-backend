@@ -16,6 +16,9 @@ var main = {
         $('#btn-delete').on('click', function () {
             _this.delete();
         });
+        $('#btn-user-update').on('click', function () {
+            _this.user_update();
+        });
     },
     save : function () {
         var data = {
@@ -73,7 +76,28 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-    }
+    },
+    user_update : function () {
+        var data = {
+            skinType: $('#skinType').val(),
+            skinTone: $('#skinTone').val()
+        };
+
+        var id = $('#id').val();
+
+        $.ajax({
+                type: 'PUT',
+                url: '/api/v1/user/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('유저정보가 수정되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        },
 };
 
 main.init();

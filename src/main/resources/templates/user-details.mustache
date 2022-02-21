@@ -1,0 +1,24 @@
+{{>layout/header}}
+
+<h1>유저 세부정보 등록</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                 <label for="author">유저</label>
+                 <input type="text" class="form-control" id="user" value="user-name" readonly>
+             </div>
+            <div class="form-group">
+                <label for="author">피부타입 입력</label>
+                <input type="text" class="form-control" id="skinType" placeholder="피부타입을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="content">피부톤 입력</label>
+                <textarea class="form-control" id="skinTone" placeholder="피부톤을 입력하세요"></textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-user-update">등록</button>
+    </div>
+</div>
+{{>layout/footer}}

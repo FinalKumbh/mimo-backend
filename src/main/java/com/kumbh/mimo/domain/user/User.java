@@ -44,10 +44,35 @@ public class User extends BaseTimeEntity {
 
     private String providerId;
 
+    private String skinType;
+
+    private String skinTone;
+
+    public void update(String skinType, String skinTone) {
+        this.skinType = skinType;
+        this.skinTone = skinTone;
+    }
+
     @Builder
     public User(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public String getSkinType() {
+        return skinType;
+    }
+
+    public void setSkinType(String skinType) {
+        this.skinType = skinType;
+    }
+
+    public String getSkinTone() {
+        return skinTone;
+    }
+
+    public void setSkinTone(String skinTone) {
+        this.skinTone = skinTone;
     }
 
     public Long getId() {

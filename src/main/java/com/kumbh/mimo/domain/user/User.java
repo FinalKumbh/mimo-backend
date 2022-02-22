@@ -48,9 +48,18 @@ public class User extends BaseTimeEntity {
 
     private String skinTone;
 
-    public void update(String skinType, String skinTone) {
+    private String gender;
+
+    private String birthdate;
+
+    public void updateSkin(String skinType, String skinTone) {
         this.skinType = skinType;
         this.skinTone = skinTone;
+    }
+
+    public void updateDetails(String gender, String birthdate) {
+        this.gender = gender;
+        this.birthdate = birthdate;
     }
 
     @Builder

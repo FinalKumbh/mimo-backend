@@ -1,7 +1,8 @@
 package com.kumbh.mimo.web;
 
 import com.kumbh.mimo.domain.user.UserRepository;
-import com.kumbh.mimo.dto.user.UserUpdateRequestDto;
+import com.kumbh.mimo.dto.user.UserUpdateDetailsRequestDto;
+import com.kumbh.mimo.dto.user.UserUpdateSkinRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,23 +33,45 @@ public class UserControllerTest {
     }
 
     @Test
-    public void update() throws Exception{
+    public void updateSkin() throws Exception{
 
         String email = "chaehoon.gwak@gmail.com";
         String skinType = "복합성";
         String skinTone = "쿨톤";
 
-        UserUpdateRequestDto requestDto = UserUpdateRequestDto.builder()
+        UserUpdateSkinRequestDto requestDto = UserUpdateSkinRequestDto.builder()
                 .skinType(skinType)
                 .skinTone(skinTone)
                 .build();
 
-        String url = "http://localhost:" + port + "/user/update/" + email;
+        String url = "http://localhost:" + port + "/user/update/skin/" + email;
 
 //        User user = userRepository.findByEmail(email).orElseThrow();
 //        System.out.println(user);
+//        System.out.println(url);
 
-        System.out.println(url);
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestDto, String.class);
+
+        System.out.println(responseEntity);
+    }
+
+    @Test
+    public void updateDetails() throws Exception{
+
+        String email = "chaehoon.gwak@gmail.com";
+        String gender = "남성";
+        String birthdate = "1994-03-14";
+
+        UserUpdateDetailsRequestDto requestDto = UserUpdateDetailsRequestDto.builder()
+                .gender(gender)
+                .birthdate(birthdate)
+                .build();
+
+        String url = "http://localhost:" + port + "/user/update/details/" + email;
+
+//        User user = userRepository.findByEmail(email).orElseThrow();
+//        System.out.println(user);
+//        System.out.println(url);
 
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestDto, String.class);
 

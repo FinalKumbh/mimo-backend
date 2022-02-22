@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class UserUpdateRequestDto {
+public class UserUpdateSkinRequestDto {
     private String skinType;
     private String skinTone;
 
     @Builder
-    public UserUpdateRequestDto(String skinType, String skinTone){
+    public UserUpdateSkinRequestDto(String skinType, String skinTone){
         this.skinType = skinType;
         this.skinTone = skinTone;
     }

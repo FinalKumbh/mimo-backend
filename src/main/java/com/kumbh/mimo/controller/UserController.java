@@ -3,7 +3,8 @@ package com.kumbh.mimo.controller;
 import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.domain.user.UserRepository;
 import com.kumbh.mimo.dto.user.UserResponseDto;
-import com.kumbh.mimo.dto.user.UserUpdateRequestDto;
+import com.kumbh.mimo.dto.user.UserUpdateDetailsRequestDto;
+import com.kumbh.mimo.dto.user.UserUpdateSkinRequestDto;
 import com.kumbh.mimo.exception.ResourceNotFoundException;
 import com.kumbh.mimo.security.CurrentUser;
 import com.kumbh.mimo.security.UserPrincipal;
@@ -29,9 +30,15 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
 
-    @PostMapping("/update/{email}")
-    public String update(@PathVariable String email, @RequestBody UserUpdateRequestDto requestDto){
-        System.out.println("in user update controller");
+    @PutMapping("/update/skin/{email}")
+    public String updateSkin(@PathVariable String email, @RequestBody UserUpdateSkinRequestDto requestDto){
+        System.out.println("in user update skin controller");
+        return userService.updateSkin(email, requestDto);
+    }
+
+    @PutMapping("/update/details/{email}")
+    public String updateUser(@PathVariable String email, @RequestBody UserUpdateDetailsRequestDto requestDto) {
+        System.out.println("in user update details controller");
         return userService.updateDetails(email, requestDto);
     }
 

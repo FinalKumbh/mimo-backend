@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @PutMapping("/update/details/{email}")
-    public String updateUser(@PathVariable String email, @RequestBody UserUpdateDetailsRequestDto requestDto) {
+    public String updateDetails(@PathVariable String email, @RequestBody UserUpdateDetailsRequestDto requestDto) {
         System.out.println("in user update details controller");
         return userService.updateDetails(email, requestDto);
     }

@@ -2,6 +2,7 @@ package com.kumbh.mimo.domain.item;
 
 import com.kumbh.mimo.domain.BaseEntity;
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
+import com.kumbh.mimo.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="item")
@@ -21,7 +23,10 @@ public class Item extends BaseEntity {
     private Long id;                            //상품코드
 
     @Column(nullable = false, length = 50)
-    private String itemNm;                      //상품명
+    private String itemName;                      //상품명
+
+    @Column(nullable = false)
+    private String color;                       //상품컬러 hex값
 
     @Column(name = "price", nullable = false)
     private int price;                          //가격
@@ -36,19 +41,7 @@ public class Item extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ItemSellStatus itemSellStatus;      //상품 판매 상태
 
-    //public Item() {
-    //}
-
-    //@Builder
-    //public Item(Long id, String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus, LocalDateTime regTime, LocalDateTime updateTime){
-    //    this.id = id;
-    //    this.itemNm = itemNm;
-    //    this.price = price;
-    //    this.stockNumber = stockNumber;
-    //    this.itemDetail = itemDetail;
-    //    this.itemSellStatus = itemSellStatus;
-    //    this.regTime = regTime;
-    //    this.updateTime = updateTime;
-    //}
-
+    @OneToMany
+    @JoinColumn(name = "item_id")
+    private List<Posts> posts;
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -49,6 +50,7 @@ public class UserControllerTest {
 //        User user = userRepository.findByEmail(email).orElseThrow();
 //        System.out.println(user);
 //        System.out.println(url);
+        HttpEntity<?> requestUpdate = new HttpEntity<>(requestDto);
 
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestDto, String.class);
 

@@ -47,10 +47,10 @@ public class ItemController {
         return "redirect:/item/new";
     }
 
-//    @GetMapping(value = "/{itemId}")
-//    public String item(Model model, @PathVariable("itemId") Long itemId){
-//        ItemFormDto itemFormDto = itemService.getItem(itemId);
-//        model.addAttribute("item", itemFormDto);
-//        return "item/item";
-//    }
+    @GetMapping(value = "/{itemId}")
+    public String item(Model model, @PathVariable("itemId") Long itemId){
+        ItemFormDto itemFormDto = itemService.getItem(itemId);
+        model.addAttribute("item", itemFormDto);
+        return "item/item";
+    }
 }

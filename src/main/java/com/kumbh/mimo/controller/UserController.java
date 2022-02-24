@@ -11,6 +11,8 @@ import com.kumbh.mimo.security.UserPrincipal;
 import com.kumbh.mimo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,19 +32,36 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
 
-    @PutMapping("/update/skin/{email}")
-    public String updateSkin(@PathVariable String email, @RequestBody UserUpdateSkinRequestDto requestDto){
+    @PostMapping("/update/skin/{email}")
+    public ResponseEntity<?> updateSkin(@PathVariable String email, @RequestBody UserUpdateSkinRequestDto requestDto){
         System.out.println("in user update skin controller");
-        return userService.updateSkin(email, requestDto);
+        System.out.println(requestDto.getSkinType() + requestDto.getSkinTone());
+        String result = "";
+        try{
+            userService.updateSkin(email, requestDto);
+            result = "피부 톤타입 수정 성공 !";
+            return new ResponseEntity<String>(result, HttpStatus.OK);
+        } catch(Exception e){
+            result = "피부 톤타입 수정 실패";
+            return new ResponseEntity<String>(result, HttpStatus.NO_CONTENT);
+        }
     }
 
     @PutMapping("/update/details/{email}")
-    public String updateDetails(@PathVariable String email, @RequestBody UserUpdateDetailsRequestDto requestDto) {
+    public ResponseEntity<?> updateDetails(@PathVariable String email, @RequestBody UserUpdateDetailsRequestDto requestDto) {
         System.out.println("in user update details controller");
-        return userService.updateDetails(email, requestDto);
+        String result = "";
+        try{
+            userService.updateDetails(email, requestDto);
+            result = "피부 정보 수정 성공 !";
+            return new ResponseEntity<String>(result, HttpStatus.OK);
+        } catch(Exception e){
+            result = "피부 정보 수정 실패";
+            return new ResponseEntity<String>(result, HttpStatus.NO_CONTENT);
+        }
     }
 
-    @GetMapping("/api/v1/user/{id}")
+    @GetMapping("/{id}")
     public UserResponseDto findById(@PathVariable Long id){
         return userService.findById(id);
     }

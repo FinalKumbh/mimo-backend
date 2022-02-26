@@ -3,6 +3,8 @@ package com.kumbh.mimo.controller;
 import com.kumbh.mimo.dto.item.ItemFormDto;
 import com.kumbh.mimo.service.ItemService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -47,10 +49,35 @@ public class ItemController {
         return "redirect:/item/new";
     }
 
-    @GetMapping(value = "/{itemId}")
-    public String item(Model model, @PathVariable("itemId") Long itemId){
-        ItemFormDto itemFormDto = itemService.getItem(itemId);
-        model.addAttribute("item", itemFormDto);
-        return "item/item";
+//    @GetMapping(value = "/{itemId}")
+//    public String item(Model model, @PathVariable("itemId") Long itemId){
+//        ItemFormDto itemFormDto = itemService.getItem(itemId);
+//        model.addAttribute("item", itemFormDto);
+//        return "item/item";
+//    }
+
+    @GetMapping("/{itemId}")
+    public @ResponseBody ResponseEntity<?> getItem(@PathVariable Long itemId){
+        String result = "";
+
+        try{
+            ItemFormDto itemFormDto = itemService.getItem(itemId);
+            result = "item_id : " + itemId + " Get OK";
+            return new ResponseEntity<ItemFormDto>(itemFormDto, HttpStatus.OK);
+        } catch(Exception e){
+            result = "item_id : " + itemId + " Get Fail";
+            return new ResponseEntity<ItemFormDto>(HttpStatus.NO_CONTENT);
+        }
     }
+
+//    @GetMapping("/{itemId}")
+//    public ResponseEntity<?> item(@PathVariable Long itemId){
+//        ItemFormDto itemFormDto = itemService.getItem(itemId);
+//
+//        if(itemFormDto == null){
+//            return ResponseEntity.noContent().build();
+//        }
+//
+//        return ResponseEntity.ok(itemFormDto);
+//    }
 }

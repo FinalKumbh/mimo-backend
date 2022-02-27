@@ -84,6 +84,26 @@
         </div>
         <p th:if="${#fields.hasErrors('color')}" th:errors="*{color}" class="fieldError">Incorrect data</p>
 
+        <div class="form-group">
+            <select th:field="*{skintype}" class="custom-select">
+                <option value="COMBI">복합성</option>
+                <option value="DRY">건성</option>
+                <option value="OILY">지성</option>
+                <option value="SENSITIVE">민감성</option>
+                <option value="NORMAL">중성</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select th:field="*{skintone}" class="custom-select">
+                <option value="SPRING">봄웜</option>
+                <option value="SUMMER">여름쿨</option>
+                <option value="FALL">가을웜</option>
+                <option value="WINTER">겨울쿨</option>
+                <option value="UNKNOWN">아직모름</option>
+            </select>
+        </div>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">가격</span>

@@ -2,6 +2,8 @@ package com.kumbh.mimo.domain.item;
 
 import com.kumbh.mimo.domain.BaseEntity;
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
+import com.kumbh.mimo.domain.constant.SkinTone;
+import com.kumbh.mimo.domain.constant.SkinType;
 import com.kumbh.mimo.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,11 +24,18 @@ public class Item extends BaseEntity {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;                            //상품코드
 
+    @Column(nullable = false)
+    private String color;                       //상품컬러 hex값
+
+    @Lob
+    @Column(nullable = false)
+    private String itemDetail;                  //상품 상세 설명
+
     @Column(nullable = false, length = 50)
     private String itemName;                      //상품명
 
-    @Column(nullable = false)
-    private String color;                       //상품컬러 hex값
+    @Enumerated(EnumType.STRING)
+    private ItemSellStatus itemSellStatus;      //상품 판매 상태
 
     @Column(name = "price", nullable = false)
     private int price;                          //가격
@@ -34,12 +43,11 @@ public class Item extends BaseEntity {
     @Column(nullable = false)
     private int stockNumber;                    //재고수량
 
-    @Lob
-    @Column(nullable = false)
-    private String itemDetail;                  //상품 상세 설명
+    @Enumerated(EnumType.STRING)
+    private SkinType skintype;
 
     @Enumerated(EnumType.STRING)
-    private ItemSellStatus itemSellStatus;      //상품 판매 상태
+    private SkinTone skintone;
 
     @OneToMany
     @JoinColumn(name = "item_id")

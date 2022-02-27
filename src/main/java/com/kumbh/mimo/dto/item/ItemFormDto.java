@@ -1,6 +1,8 @@
 package com.kumbh.mimo.dto.item;
 
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
+import com.kumbh.mimo.domain.constant.SkinTone;
+import com.kumbh.mimo.domain.constant.SkinType;
 import com.kumbh.mimo.domain.item.Item;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,22 +17,26 @@ public class ItemFormDto {
 
     private Long id;
 
-    @NotBlank(message = "상품명은 필수 입력 값입니다.")
-    private String itemName;
-
     @NotBlank(message = "상품컬러는 필수 입력 값입니다.")
     private String color;
-
-    @NotNull(message = "가격은 필수 입력 값입니다.")
-    private Integer price;
 
     @NotBlank(message = "상품 상세는 필수 입력 값입니다.")
     private String itemDetail;
 
+    @NotBlank(message = "상품명은 필수 입력 값입니다.")
+    private String itemName;
+
+    private ItemSellStatus itemSellStatus;
+
+    @NotNull(message = "가격은 필수 입력 값입니다.")
+    private Integer price;
+
     @NotNull(message = "재고는 필수 입력 값입니다.")
     private Integer stockNumber;
 
-    private ItemSellStatus itemSellStatus;
+    private SkinType skintype;
+
+    private SkinTone skintone;
 
     private List<ItemImgDto> itemImgDtoList = new ArrayList<>();                                    //상품 저장 후 수정할 때 상품 이미지 정보를 저장하는 리스트
 

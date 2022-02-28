@@ -23,7 +23,7 @@ public class Item extends BaseEntity {
     private Long id;                            //상품코드
 
     @Column(nullable = false, length = 50)
-    private String itemName;                      //상품명
+    private String itemName;                    //상품명
 
     @Column(nullable = false)
     private String color;                       //상품컬러 hex값

@@ -14,7 +14,6 @@ import java.util.List;
 
 @Getter @Setter
 public class ItemFormDto {
-
     private Long id;
 
     @NotBlank(message = "상품컬러는 필수 입력 값입니다.")
@@ -37,6 +36,9 @@ public class ItemFormDto {
     private SkinType skintype;
 
     private SkinTone skintone;
+
+    @NotBlank(message = "상품코드는 필수 입력 값입니다.")
+    private String code;
 
     private List<ItemImgDto> itemImgDtoList = new ArrayList<>();                                    //상품 저장 후 수정할 때 상품 이미지 정보를 저장하는 리스트
 

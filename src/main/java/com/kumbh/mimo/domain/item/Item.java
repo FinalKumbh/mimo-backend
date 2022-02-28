@@ -20,7 +20,7 @@ import java.util.List;
 @ToString
 public class Item extends BaseEntity {
     @Id
-    @Column(name="item_id")
+    @Column(name="item_id", nullable = false)
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;                            //상품코드
 
@@ -48,6 +48,9 @@ public class Item extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private SkinTone skintone;
+
+    @Column(nullable = false)
+    private String code;
 
     @OneToMany
     @JoinColumn(name = "item_id")

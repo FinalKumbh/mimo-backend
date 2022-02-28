@@ -34,7 +34,7 @@ public class ItemController {
             return "item/itemForm";
         }
 
-        if(itemImgFileList.get(0).isEmpty() && itemFormDto.getId() == null){
+        if(itemImgFileList.get(0).isEmpty() && itemFormDto.getId() == 0){
             model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수 입력 값 입니다.");
             return "item/itemForm";
         }

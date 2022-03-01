@@ -68,4 +68,12 @@ public class ItemService {
         itemFormDto.setItemImgDtoList(itemImgDtoList);
         return itemFormDto;
     }
+
+    public List<Item> getAllItem(){
+        return itemRepository.findAll();
+    }
+
+
+
+
 }

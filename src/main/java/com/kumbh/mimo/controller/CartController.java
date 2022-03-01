@@ -1,8 +1,5 @@
 package com.kumbh.mimo.controller;
 
-
-
-
 import com.kumbh.mimo.dto.cart.CartDetailDto;
 import com.kumbh.mimo.dto.cart.CartItemDto;
 import com.kumbh.mimo.service.CartService;
@@ -32,19 +29,32 @@ public class CartController {
         return new ResponseEntity<Long>(cartItemId, HttpStatus.OK);
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<?> getCart(@PathVariable String email){
-        String result = "";
+//    @GetMapping("/{email}")
+//    public ResponseEntity<?> getCart(@PathVariable String email){
+//        List<CartDetailDto> cartDetailList = cartService.getCartList(email);
+//
+//        if (cartDetailList == null){
+//            return ResponseEntity.noContent().build();
+//        }
+//        return ResponseEntity.ok(cartDetailList);
+//    }
 
-        try{
-            List<CartDetailDto> cartDetailList = cartService.getCartList(email);
-            result = "cartDetailList : " + cartDetailList + " Get OK";
-            return new ResponseEntity<List>(cartDetailList, HttpStatus.OK);
-        } catch(Exception e){
-            result = "cartDetailList Get Fail";
-            return new ResponseEntity<List>(HttpStatus.NO_CONTENT);
-        }
+    @GetMapping("/{email}")
+    public List<CartDetailDto> getCart(@PathVariable String email){
+        return cartService.getCartList(email);
     }
+
+//    @GetMapping("/{email}")
+//    public ResponseEntity<?> getCart(@PathVariable String email){
+//        String result = "";
+//
+//        try{
+//            List<CartDetailDto> cartDetailList = cartService.getCartList(email);
+//            return new ResponseEntity<List>(cartDetailList, HttpStatus.OK);
+//        } catch(Exception e){
+//            return new ResponseEntity<List>(HttpStatus.NO_CONTENT);
+//        }
+//    }
 
 
 

@@ -135,7 +135,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.html",
                         "/**/*.css",
                         "/**/*.js",
-                        "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/posts/save", "/posts/update/**", "/api/v1/**", "/home", "/user/**", "/user/update/**", "/user/update/skin/**", "/user/update/details/**", "/item/**", "item/itemForm")
+                        "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/posts/save", "/posts/update/**", "/api/v1/**", "/home", "/user/**", "/user/update/**", "/user/update/skin/**", "/user/update/details/**", "/item/**", "/item/itemForm", "/cart/**")
                 .permitAll()
                 .antMatchers("/auth/**", "/oauth2/**")
                 .permitAll()

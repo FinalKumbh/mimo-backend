@@ -13,7 +13,7 @@ public interface ItemImgRepository extends JpaRepository<ItemImg, Long> {
     @Query("select new com.kumbh.mimo.dto.item.ItemListDto(i.id, i.itemName, i.itemDetail, i.skintype, i.skintone, ii.imgUrl) " +
             "from ItemImg ii " +
             "join Item i " +
-            "where i.id = ii.item.id"
+            "on (i.id = ii.item.id)"
     )
     List<ItemListDto> getAllItems();
 }

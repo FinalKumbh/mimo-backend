@@ -91,7 +91,7 @@ public class ItemController {
     }
 
     @GetMapping("/view")
-    public List<ItemListDto> getAllItems(){
+    public @ResponseBody List<ItemListDto> getAllItems(){
         return itemService.getAllItem();
     }
 

@@ -6,6 +6,7 @@ import com.kumbh.mimo.domain.item.ItemImgRepository;
 import com.kumbh.mimo.domain.item.ItemRepository;
 import com.kumbh.mimo.dto.item.ItemFormDto;
 import com.kumbh.mimo.dto.item.ItemImgDto;
+import com.kumbh.mimo.dto.item.ItemListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,8 +70,8 @@ public class ItemService {
         return itemFormDto;
     }
 
-    public List<Item> getAllItem(){
-        return itemRepository.findAll();
+    public List<ItemListDto> getAllItem(){
+        return itemImgRepository.getAllItems();
     }
 
 

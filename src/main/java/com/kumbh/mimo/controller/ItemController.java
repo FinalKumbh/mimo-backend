@@ -3,7 +3,9 @@ package com.kumbh.mimo.controller;
 import com.kumbh.mimo.domain.item.Item;
 import com.kumbh.mimo.domain.item.ItemRepository;
 import com.kumbh.mimo.domain.user.User;
+import com.kumbh.mimo.dto.cart.CartDetailDto;
 import com.kumbh.mimo.dto.item.ItemFormDto;
+import com.kumbh.mimo.dto.item.ItemListDto;
 import com.kumbh.mimo.exception.ResourceNotFoundException;
 import com.kumbh.mimo.security.CurrentUser;
 import com.kumbh.mimo.security.UserPrincipal;
@@ -89,9 +91,14 @@ public class ItemController {
     }
 
     @GetMapping("/view")
-    public List<Item> getAllItems(){
+    public List<ItemListDto> getAllItems(){
         return itemService.getAllItem();
     }
+
+//    @GetMapping("/items")
+//    public List<ItemFormDto> getAllItem(){
+//        return itemService.getAllItem();
+//    }
 
 //    @GetMapping("/view")
 //    public ResponseEntity<?> getAllItems(){

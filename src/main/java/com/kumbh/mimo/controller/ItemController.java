@@ -54,7 +54,7 @@ public class ItemController {
             model.addAttribute("errorMessage", "상품 등록 중 에러가 발생하였습니다.");
             return "item/itemForm";
         }
-
+        System.out.print(bindingResult);
         return "redirect:/item/new";
     }
 

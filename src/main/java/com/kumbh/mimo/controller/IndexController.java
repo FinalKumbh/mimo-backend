@@ -2,9 +2,7 @@ package com.kumbh.mimo.controller;
 
 import com.kumbh.mimo.security.CurrentUser;
 import com.kumbh.mimo.security.UserPrincipal;
-import com.kumbh.mimo.service.PostsService;
 import com.kumbh.mimo.service.UserService;
-import com.kumbh.mimo.dto.post.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +15,13 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    private final PostsService postsService;
+
     private final HttpSession httpSession;
     private final UserService userService;
 
     @GetMapping("/")
     public String index(Model model, @CurrentUser UserPrincipal user) {
-        model.addAttribute("posts", postsService.findAllDesc());
+//        model.addAttribute("posts", reviewService.findAllDesc());
 
         if (user != null) {
             model.addAttribute("userName", user.getUsername());
@@ -31,18 +29,18 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/posts/save")
-    public String postsSave(){
-        return "posts-save";
-    }
-
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
-
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post",dto);
-        return "posts-update";
-    }
+//    @GetMapping("/posts/save")
+//    public String postsSave(){
+//        return "posts-save";
+//    }
+//
+//    @GetMapping("/posts/update/{id}")
+//    public String postsUpdate(@PathVariable Long id, Model model){
+//
+//        PostsResponseDto dto = postsService.findById(id);
+//        model.addAttribute("post",dto);
+//        return "posts-update";
+//    }
 
 //    @GetMapping("/user/details/update")
 //    public String userDetailsUpdate(){

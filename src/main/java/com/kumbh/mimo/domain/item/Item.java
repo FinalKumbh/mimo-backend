@@ -4,14 +4,12 @@ import com.kumbh.mimo.domain.BaseEntity;
 import com.kumbh.mimo.domain.constant.ItemSellStatus;
 import com.kumbh.mimo.domain.constant.SkinTone;
 import com.kumbh.mimo.domain.constant.SkinType;
-import com.kumbh.mimo.domain.posts.Posts;
-import lombok.Builder;
+import com.kumbh.mimo.domain.review.Review;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -54,5 +52,5 @@ public class Item extends BaseEntity {
 
     @OneToMany
     @JoinColumn(name = "item_id")
-    private List<Posts> posts;
+    private List<Review> reviews;
 }

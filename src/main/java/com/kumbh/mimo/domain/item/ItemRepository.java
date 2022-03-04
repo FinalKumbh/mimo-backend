@@ -22,11 +22,4 @@ public interface ItemRepository extends JpaRepository<Item,Long> {
             "%:itemDetail% order by i.price desc", nativeQuery = true)
     List<Item> findByItemDetailByNative(@Param("itemDetail") String itemDetail);
 
-
-//    @Query("select new com.kumbh.mimo.dto.item.ItemListDto(i.item_id, i.item_name, i.item_detail, i.skintype, i.skintone, ii.img_url) " +
-//            "FROM item i " +
-//            "JOIN item_img ii " +
-//            "WHERE i.item_id = ii.item_id"
-//    )
-//    List<ItemListDto> getAllItems();
 }

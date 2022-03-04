@@ -1,11 +1,12 @@
 package com.kumbh.mimo.web;
 
 
-import com.kumbh.mimo.domain.posts.Posts;
-import com.kumbh.mimo.domain.posts.PostsRepository;
 
-import com.kumbh.mimo.dto.post.PostsSaveRequestDto;
-import com.kumbh.mimo.dto.post.PostsUpdateRequestDto;
+import com.kumbh.mimo.domain.review.Review;
+import com.kumbh.mimo.domain.review.ReviewRepository;
+
+import com.kumbh.mimo.dto.review.ReviewSaveRequestDto;
+import com.kumbh.mimo.dto.review.ReviewUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.List;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PostsControllerTest {
+public class ReviewControllerTest {
 
     @LocalServerPort
     private int port;
@@ -30,7 +31,7 @@ public class PostsControllerTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private PostsRepository postsRepository;
+    private ReviewRepository reviewRepository;
 
     @Autowired
     private WebApplicationContext context;
@@ -45,7 +46,7 @@ public class PostsControllerTest {
         // given
         String title = "title";
         String content = "content";
-        PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
+        ReviewSaveRequestDto requestDto = ReviewSaveRequestDto.builder()
                 .title(title)
                 .content(content)
                 .author("author")
@@ -61,23 +62,23 @@ public class PostsControllerTest {
 //        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
 //        assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
-        List<Posts> all = postsRepository.findAll();
+        List<Review> all = reviewRepository.findAll();
 //        assertThat(all.get(0).getTitle()).isEqualTo(title);
 //        assertThat(all.get(0).getContent()).isEqualTo(content);
     }
     @Test
     public void Posts_수정된다() throws Exception{
         // given
-        Posts savedPosts = postsRepository.save(Posts.builder()
+        Review savedReview = reviewRepository.save(Review.builder()
                 .content("content")
                 .author("author")
                 .build());
 
-        Long updateId = savedPosts.getId();
+        Long updateId = savedReview.getId();
         String expectedTitle = "title2";
         String expectedContent = "content2";
 
-        PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
+        ReviewUpdateRequestDto requestDto = ReviewUpdateRequestDto.builder()
                 .title(expectedTitle)
                 .content(expectedContent)
                 .build();
@@ -93,7 +94,7 @@ public class PostsControllerTest {
 //        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
 //        assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
-        List<Posts> all = postsRepository.findAll();
+        List<Review> all = reviewRepository.findAll();
 //        assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
 //        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
     }

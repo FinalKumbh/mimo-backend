@@ -1,24 +1,25 @@
-package com.kumbh.mimo.dto.post;
+package com.kumbh.mimo.dto.review;
 
-import com.kumbh.mimo.domain.posts.Posts;
+
+import com.kumbh.mimo.domain.review.Review;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class PostsSaveRequestDto {
+public class ReviewSaveRequestDto {
     private String content;
     private String author;
 
     @Builder
-    public PostsSaveRequestDto(String title, String content, String author){
+    public ReviewSaveRequestDto(String title, String content, String author){
         this.content = content;
         this.author = author;
     }
 
-    public Posts toEntity(){
-        return Posts.builder()
+    public Review toEntity(){
+        return Review.builder()
                 .content(content)
                 .author(author)
                 .build();

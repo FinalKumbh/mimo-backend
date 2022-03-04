@@ -50,7 +50,7 @@ public class Item extends BaseEntity {
     @Column(nullable = false)
     private String code;
 
-    @OneToMany
-    @JoinColumn(name = "item_id")
-    private List<Review> reviews;
+//    @OneToMany
+//    @JoinColumn(name = "item_id")
+//    private List<Review> reviews;
 }

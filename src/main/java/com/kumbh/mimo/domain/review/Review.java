@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Review extends BaseEntity {
 
     @Id
+    @Column(name = "review_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
@@ -26,12 +27,17 @@ public class Review extends BaseEntity {
 
     private String author;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private Item item;
+
     @Builder
-    public Review(String content, int point, String imageUrl, String author) {
+    public Review(String content, int point, String imageUrl, String author, Item item) {
         this.content = content;
         this.point = point;
         this.imageUrl = imageUrl;
         this.author = author;
+        this.item = item;
     }
 
     @Builder

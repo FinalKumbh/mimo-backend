@@ -12,9 +12,9 @@ public class ReviewListResponseDto {
     private String author;
     private LocalDateTime modifiedDate;
 
-    public ReviewListResponseDto(Review entity){
-        this.id = entity.getId();
-        this.author = entity.getAuthor();
-        this.modifiedDate = entity.getModifiedDate();
-    }
+//    public ReviewListResponseDto(Review entity){
+//        this.id = entity.getId();
+//        this.author = entity.getAuthor();
+//        this.modifiedDate = entity.getModifiedDate();
+//    }
 }

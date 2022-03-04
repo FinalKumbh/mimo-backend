@@ -10,9 +10,9 @@ public class ReviewResponseDto {
     private String content;
     private String author;
 
-    public ReviewResponseDto(Review entity){
-        this.id = entity.getId();
-        this.content = entity.getContent();
-        this.author = entity.getAuthor();
-    }
+//    public ReviewResponseDto(Review entity){
+//        this.id = entity.getId();
+//        this.content = entity.getContent();
+//        this.author = entity.getAuthor();
+//    }
 }

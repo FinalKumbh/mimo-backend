@@ -4,12 +4,13 @@ package com.kumbh.mimo.controller;
 import com.kumbh.mimo.domain.review.Review;
 import com.kumbh.mimo.dto.review.ReviewResponseDto;
 import com.kumbh.mimo.dto.review.ReviewSaveRequestDto;
-import com.kumbh.mimo.dto.review.ReviewUpdateRequestDto;
 import com.kumbh.mimo.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -28,6 +29,18 @@ public class ReviewController {
         }
         return new ResponseEntity<Review>(HttpStatus.OK);
     }
+
+    @GetMapping("/{itemId}")
+    public ResponseEntity<?> getReviews(@PathVariable Long itemId){
+        List<ReviewResponseDto> reviewList =  reviewService.getReviewList(itemId);
+
+        return ResponseEntity.ok(reviewList);
+    }
+
+//    @DeleteMapping
+//    public ResponseEntity<?> delete() {
+//
+//    }
 
 //    @PutMapping("/api/v1/posts/{id}")
 //    public Long update(@PathVariable Long id, @RequestBody ReviewUpdateRequestDto requestDto){

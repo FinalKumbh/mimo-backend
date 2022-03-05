@@ -5,14 +5,17 @@ import lombok.Getter;
 
 @Getter
 public class ReviewResponseDto {
-    private Long id;
-    private String title;
+    private Long   reviewId;
     private String content;
-    private String author;
+    private String name;
+    private int    point;
+    private String imageUrl;
 
-//    public ReviewResponseDto(Review entity){
-//        this.id = entity.getId();
-//        this.content = entity.getContent();
-//        this.author = entity.getAuthor();
-//    }
+    public ReviewResponseDto(Long reviewId, String content, String name, int point, String imageUrl){
+        this.reviewId = reviewId;
+        this.content = content;
+        this.name = name;
+        this.point = point;
+        this.imageUrl = imageUrl;
+    }
 }

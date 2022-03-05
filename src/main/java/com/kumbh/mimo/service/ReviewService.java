@@ -7,18 +7,15 @@ import com.kumbh.mimo.domain.review.Review;
 import com.kumbh.mimo.domain.review.ReviewRepository;
 import com.kumbh.mimo.domain.user.User;
 import com.kumbh.mimo.domain.user.UserRepository;
-import com.kumbh.mimo.dto.review.ReviewListResponseDto;
 import com.kumbh.mimo.dto.review.ReviewResponseDto;
 import com.kumbh.mimo.dto.review.ReviewSaveRequestDto;
-import com.kumbh.mimo.dto.review.ReviewUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -45,6 +42,15 @@ public class ReviewService {
             reviewRepository.save(review);
             return true;
         }
+    }
+
+    @Transactional
+    public List<ReviewResponseDto> getReviewList(Long itemId){
+        List<ReviewResponseDto> reviewDtoList = new ArrayList<>();
+
+        reviewDtoList = reviewRepository.findAllDesc(itemId);
+
+        return reviewDtoList;
     }
 
 //    @Transactional

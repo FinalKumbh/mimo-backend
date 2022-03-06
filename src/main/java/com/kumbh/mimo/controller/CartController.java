@@ -40,9 +40,27 @@ public class CartController {
 //    }
 
     @GetMapping("/{email}")
-    public List<CartDetailDto> getCart(@PathVariable String email){
-        return cartService.getCartList(email);
+    public ResponseEntity<?> getCart(@PathVariable String email){
+        List<CartDetailDto> cartDtoList = cartService.getCartList(email);
+
+        if(cartDtoList.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(cartDtoList);
     }
+
+    @PatchMapping
+    public ResponseEntity<?> updateCartItemCnt(Long cartItemId, int count){
+        cartService.updateCartItemCount(cartItemId, count);
+        return ResponseEntity.ok("수정 완료");
+    }
+
+    @DeleteMapping
+    public ResponseEntity<?> deleteCartItem(Long cartItemId){
+        cartService.deleteCartItem(cartItemId);
+        return ResponseEntity.ok("삭제 완료");
+    }
+
 
 //    @GetMapping("/{email}")
 //    public ResponseEntity<?> getCart(@PathVariable String email){

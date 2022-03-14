@@ -32,7 +32,7 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
 
-    @PostMapping("/skin/{email}")
+    @PatchMapping("/skin/{email}")
     public ResponseEntity<?> updateSkin(@PathVariable String email, @RequestBody UserUpdateSkinRequestDto requestDto){
         System.out.println("in user update skin controller");
         System.out.println(requestDto.getSkinType() + requestDto.getSkinTone());
